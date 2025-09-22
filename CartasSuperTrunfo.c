@@ -4,7 +4,7 @@
 struct Carta {
     char estado;
     char cod_carta[10];
-    char nome[25];
+    char nome[60];
     float area;
     float PIB;
     int pontos_turisticos;
@@ -50,8 +50,8 @@ void obter_carta(struct Carta *c) {
     printf("\n\to codigo da carta: ");
     scanf(" %s", c->cod_carta);
 
-    printf("\no nome da cidade(sem espaço): ");
-    scanf(" %s", c->nome);
+    printf("\no nome da cidade: ");
+    scanf(" %60[^\n]", c->nome);
     printf("\na área da cidade(Ex: 17.5): ");
 
     scanf(" %f", &c->area);
@@ -69,7 +69,7 @@ void exibir_cartas(struct Carta *carta1, struct Carta *carta2) {
     printf("~~~~~~~~~~~~~~ || CARTAS EM JOGO || ~~~~~~~~~~~~~~\n");
     printf("                     CARTA 1 \n");
 
-    printf("Letra do Estado: %s\n",carta1->nome);
+    printf("Letra do Estado: %c\n",carta1->estado);
     printf("Codigo da Carta: %s\n",carta1->cod_carta);
     printf("Nome da Cidade: %s\n", carta1->nome);
     printf("Área da Cidade: %f km²\n", carta1->area);
@@ -79,7 +79,7 @@ void exibir_cartas(struct Carta *carta1, struct Carta *carta2) {
 
     printf("                     CARTA 2 \n");
 
-    printf("Letra do Estado: %s\n",carta2->nome);
+    printf("Letra do Estado: %c\n",carta2->estado);
     printf("Codigo da Carta: %s\n",carta2->cod_carta);
     printf("Nome da Cidade: %s\n", carta2->nome);
     printf("Área da Cidade: %f  km²\n", carta2->area);
