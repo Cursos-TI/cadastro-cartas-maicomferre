@@ -3,7 +3,7 @@
 
 struct Carta {
     char estado;
-    char cod_carta[10];
+    char cod_carta[4];
     char nome[60];
     float area;
     float PIB;
